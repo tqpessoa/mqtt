@@ -1,6 +1,5 @@
 # MQTT Client demo
-# Continuously monitor two different MQTT topics for data,
-# check if the received data matches two predefined 'commands'
+
  
 import paho.mqtt.client as mqtt
  
@@ -10,20 +9,20 @@ def on_connect(client, userdata, flags, rc):
  
     # Subscribing in on_connect() - if we lose the connection and
     # reconnect then subscriptions will be renewed.
-    client.subscribe("CoreElectronics/test")
-    client.subscribe("CoreElectronics/topic")
+    client.subscribe("IOT/test")
+    client.subscribe("IOT/topic")
  
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
     print(msg.topic+" "+str(msg.payload))
 
     if msg.payload == "Hello":
-        print("Received message #1, do something")
+        print("mensagem recebida #1 ")
         # Do something
 
 
     if msg.payload == "World!":
-        print("Received message #2, do something else")
+        print("mensagem recebida #1")
         # Do something else
  
 # Create an MQTT client and attach our routines to it.
