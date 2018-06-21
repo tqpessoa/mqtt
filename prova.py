@@ -7,8 +7,8 @@ import paho.mqtt.client as mqtt
 def on_connect(client, userdata, flags, rc):
     print("Connected with result code "+str(rc))
 
-    client.subscribe("IOT/test")
-    client.subscribe("IOT/topic")
+    client.subscribe("CAR #1/CO2")
+    client.subscribe("CAR #1/COUNT")
  
  
 # Create an MQTT client and attach our routines to it.
